@@ -84,7 +84,7 @@ function Home() {
             </div>
 
             {
-                postList.map((post: IPost) => <Post {...post} key={post.id} />)
+                postList.map((post: IPost) => <Post {...post} key={post.id} callBack={() => getPosts()} />)
             }
             {loading ? <p>Loading..</p> : null}
         </div >

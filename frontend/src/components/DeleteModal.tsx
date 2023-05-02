@@ -3,12 +3,13 @@ import Button from './Button'
 import styles from './DeleteModal.module.css'
 import api from '../api/api';
 
-function DeleteModal({ id }: { id: number }) {
+function DeleteModal({ id, callBack }: { id: number, callBack: () => unknown }) {
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
     const handleDelete = async () => {
         try {
             await api.delete(id);
+            callBack()
         } catch (e) {
             console.log(e)
         }

@@ -3,7 +3,11 @@ import DeleteModal from './DeleteModal';
 import EditModal from './EditModal';
 import { IPost } from '../types/types';
 
-function Post({ id, content, created_datetime, title, username }: IPost) {
+interface IPostContent extends IPost {
+    callBack: () => unknown;
+}
+
+function Post({ id, content, created_datetime, title, username, callBack }: IPostContent) {
 
     function timeSince(date: Date) {
         const currMinusLastDate = (Number(new Date()) - Number(date))
@@ -45,8 +49,8 @@ function Post({ id, content, created_datetime, title, username }: IPost) {
                 <div className={styles.header}>
                     <p className={styles.title}>{title}</p>
                     <div className={styles.menu}>
-                        <DeleteModal id={id} />
-                        <EditModal id={id} currTitle={title} currContent={content} />
+                        <DeleteModal id={id} callBack={callBack} />
+                        <EditModal id={id} currTitle={title} currContent={content} callBack={callBack} />
                     </div>
                 </div>
                 <div className={styles.content}>

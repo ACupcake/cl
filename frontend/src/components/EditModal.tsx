@@ -5,9 +5,9 @@ import Input from './Input';
 import TextArea from './TextArea';
 import api from '../api/api';
 
-interface IEditModal { id: number, currTitle?: string, currContent?: string }
+interface IEditModal { id: number, currTitle?: string, currContent?: string, callBack: () => unknown }
 
-function EditModal({ id, currTitle, currContent }: IEditModal) {
+function EditModal({ id, currTitle, currContent, callBack }: IEditModal) {
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const [title, setTitle] = useState<string>(currTitle || "");
     const [content, setContent] = useState<string>(currContent || "");
@@ -16,6 +16,7 @@ function EditModal({ id, currTitle, currContent }: IEditModal) {
         //TODO: fix cors
         try {
             await api.patch({ title, content }, id);
+            callBack()
         } catch (e) {
             console.log(e)
         }
