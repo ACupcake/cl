@@ -49,8 +49,13 @@ function Post({ id, content, created_datetime, title, username, callBack }: IPos
                 <div className={styles.header}>
                     <p className={styles.title}>{title}</p>
                     <div className={styles.menu}>
-                        <DeleteModal id={id} callBack={callBack} />
-                        <EditModal id={id} currTitle={title} currContent={content} callBack={callBack} />
+                        {localStorage.getItem('username') === username ?
+                            <>
+                                <DeleteModal id={id} callBack={callBack} />
+                                <EditModal id={id} currTitle={title} currContent={content} callBack={callBack} />
+                            </>
+                            : null
+                        }
                     </div>
                 </div>
                 <div className={styles.content}>
