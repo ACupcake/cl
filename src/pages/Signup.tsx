@@ -23,8 +23,14 @@ function SignUp() {
         dispatch(changeUsername(currName))
     }
 
+    const enterPressed = (e: any) => {
+        if (e.key === "Enter") {
+            enterButton()
+        }
+    }
+
     return (
-        <div className={styles.modal}>
+        <div className={styles.modal} onKeyDown={(e) => enterPressed(e)}>
             <div className={styles.title}>
                 <h3>Welcome to CodeLeap network!</h3>
             </div>

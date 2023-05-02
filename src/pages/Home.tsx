@@ -42,15 +42,15 @@ function Home() {
         getPosts();
     }
 
-    useEffect(() => {
-        getPosts();
-    }, [])
-
     const handleScroll = () => {
         if (window.scrollY === document.body.scrollHeight - window.innerHeight) {
             getPosts(next);
         }
     };
+
+    useEffect(() => {
+        getPosts();
+    }, [])
 
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
