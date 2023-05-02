@@ -1,11 +1,12 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 
   --background-color: #dddddd;
   --white: white;
   --purple: #7695ec;
+  --dark-purple: #6782ca;
   --gray: gray;
+  --soft-gray: rgb(230, 230, 230);
 }
