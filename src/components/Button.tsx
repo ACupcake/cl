@@ -23,7 +23,7 @@ const Button: React.FC<PropsWithChildren<IButton>> = ({ state, children, ...prop
         let style: { [key: string]: string } = { backgroundColor: getStateColor() };
 
         if (state === "neutral") {
-            style = { ...style, color: "black", border: "1px solid black" }
+            style = { ...style, color: "black", border: "1px solid gray" }
         }
 
         if (props.disabled) {
