@@ -9,7 +9,7 @@ function DeleteModal({ id }: { id: number }) {
     const handleDelete = async () => {
         //TODO: fix cors
         try {
-            const resp = await api.delete(id);
+            await api.delete(id);
         } catch (e) {
             console.log(e)
         }

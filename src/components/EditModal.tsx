@@ -13,7 +13,7 @@ function EditModal({ id }: { id: number }) {
     const handleSave = async () => {
         //TODO: fix cors
         try {
-            const resp = await api.patch({ title, content }, id);
+            await api.patch({ title, content }, id);
         } catch (e) {
             console.log(e)
         }
