@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "post",
     
     "rest_framework",
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
@@ -51,6 +52,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
 ]
 
 ROOT_URLCONF = 'codeleap.urls'
@@ -137,3 +140,11 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 25
 }
+
+CORS_ALLOW_ALL_ORIGINS: True
+
+# TODO: limit to site 
+# CORS_ALLOWED_ORIGINS = [
+    # "http://localhost:8080",
+    # "http://127.0.0.1:9000",
+# ]
