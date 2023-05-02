@@ -6,7 +6,8 @@
     height: auto;
     min-height: 100vh;
     background-color: var(--white);
-    width: 600px;
+    max-width: 600px;
+    width: 100vw;
 }
 
 .header {
@@ -16,7 +17,8 @@
 
     background-color: var(--purple);
     height: 60px;
-    width: 600px;
+    max-width: 600px;
+    width: 100vw;
 }
 
 .headerText {
@@ -34,7 +36,7 @@
     border: 1px solid var(--gray);
     border-radius: 10px;
     height: 250px;
-    margin: 20px;
+    margin-block: 20px;
 }
 
 .makePost {
