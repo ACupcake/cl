@@ -46,7 +46,7 @@ function Post({ id, content, created_datetime, title, username }: IPost) {
                     <p className={styles.title}>{title}</p>
                     <div className={styles.menu}>
                         <DeleteModal id={id} />
-                        <EditModal id={id} />
+                        <EditModal id={id} currTitle={title} currContent={content} />
                     </div>
                 </div>
                 <div className={styles.content}>
