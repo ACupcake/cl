@@ -10,11 +10,15 @@
     transition: background-color 0.5s;
 }
 
-.button:hover {
+.button:enabled:hover {
     cursor: pointer;
     background-color: var(--dark-purple) !important;
 }
 
 .button:disabled {
+    cursor: default;
+}
+
+.button:disabled:hover {
     cursor: default;
 }
