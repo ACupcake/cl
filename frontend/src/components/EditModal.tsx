@@ -5,10 +5,12 @@ import Input from './Input';
 import TextArea from './TextArea';
 import api from '../api/api';
 
-function EditModal({ id }: { id: number }) {
+interface IEditModal { id: number, currTitle?: string, currContent?: string }
+
+function EditModal({ id, currTitle, currContent }: IEditModal) {
     const [isOpen, setIsOpen] = useState<boolean>(false);
-    const [title, setTitle] = useState<string>("");
-    const [content, setContent] = useState<string>("false");
+    const [title, setTitle] = useState<string>(currTitle || "");
+    const [content, setContent] = useState<string>(currContent || "");
 
     const handleSave = async () => {
         //TODO: fix cors
@@ -32,9 +34,9 @@ function EditModal({ id }: { id: number }) {
                             <h3>Edit item</h3>
                             <div>
                                 <p>Title</p>
-                                <Input placeholder='Hello world' onChange={(e) => setTitle(e.target.value)} />
+                                <Input placeholder='Hello world' onChange={(e) => setTitle(e.target.value)} value={title} />
                                 <p>Content</p>
-                                <TextArea placeholder='Content here' onChange={(e) => setContent(e.target.value)} />
+                                <TextArea placeholder='Content here' onChange={(e) => setContent(e.target.value)} value={content} />
                             </div>
                             <div className={styles.buttons}>
                                 <Button state={"neutral"} onClick={() => setIsOpen(false)}>Cancel</Button>

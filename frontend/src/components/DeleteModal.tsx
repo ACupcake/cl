@@ -7,7 +7,6 @@ function DeleteModal({ id }: { id: number }) {
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
     const handleDelete = async () => {
-        //TODO: fix cors
         try {
             await api.delete(id);
         } catch (e) {

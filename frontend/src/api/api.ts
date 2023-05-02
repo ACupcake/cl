@@ -27,15 +27,15 @@ const api = {
         return response;
     },
     put: async (data: IApiPatch, id:number) => {
-        const response = await apiInstance.put('/careers/' + id, data)
+        const response = await apiInstance.put('/careers/' + id + '/', data)
         return response;
     },
     patch: async (data: IApiPatch, id:number) => {
-        const response = await apiInstance.patch('/careers/' + id, data)
+        const response = await apiInstance.patch('/careers/' + id + '/', data)
         return response;
     },
     delete: async (id:number) => {
-        const response = await apiInstance.delete('/careers/' + id)
+        const response = await apiInstance.delete('/careers/' + id + '/')
         return response;
     }
 }
