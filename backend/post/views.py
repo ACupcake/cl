@@ -5,4 +5,4 @@ from post.serializers import PostSerializer
 
 class PostViewSet(viewsets.ModelViewSet):
     serializer_class = PostSerializer
-    queryset = Post.objects.all()
+    queryset = Post.objects.all().order_by('-created_datetime')
