@@ -1,0 +1,2 @@
+release: python manager.py migrate
+web: gunicorn codeleap.wsgi --log-file -
